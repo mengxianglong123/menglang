@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>河南高校计算机专业数据分析</title>
+    <link rel="stylesheet" href="../static/layui/css/layui.css">
+    <style>
+        h3{
+            text-align: center;
+            margin: 15px auto;
+            color: #777777;
+        }
+    </style>
+</head>
+<body>
+
+<ul class="layui-nav">
+    <li class="layui-nav-item" style="font-size: 19px">河南高校计算机专业信息分析</li>
+
+    <li class="layui-nav-item"><a href="/">数据总览</a></li>
+    <li class="layui-nav-item"><a href="/allSchool">按高校查看</a></li>
+    <li class="layui-nav-item"><a href="/allDataName">按信息种类查看</a></li>
+    <li class="layui-nav-item"><a href="/analyse">数据分析</a></li>
+
+</ul>
+<div class="datas">
+    <h3 th:text="${'河南省高校计算机专业'+name.getName()+'数据分析'}"></h3>
+    <div id="main" style="width: 600px;height:400px;margin: 15px auto;"></div>
+    <table class="layui-table">
+        <thead>
+        <tr>
+            <th th:each=" head : ${heads}" th:text="${head}"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td th:each="info : ${infos}" th:if="${canNum eq false}">
+                <p th:text="${info.getName() + ' / ' + info.getNum()}"></p>
+            </td>
+
+            <td th:if="${canNum}">
+                <p th:each="max : ${maxDatas}" th:text="${map.get(max.getSchoolNum()) + '/' + max.getData()}"></p>
+            </td>
+
+            <td th:if="${canNum}">
+                <p th:text="${minDatas.get(0).getData() + ' / ' + minDatas.size()}"></p>
+            </td>
+            <td th:if="${canNum}" th:each="info : ${infos}" th:text="${info}">
+
+            </td>
+        </tr>
+    </table>
+</div>
+
+<script src="../static/layui/layui.js"></script>
+<script src="https://cdn.bootcss.com/echarts/4.3.0-rc.2/echarts.min.js"></script>
+<script th:inline="none">
+    //一般直接写在一个js文件中
+    layui.use(['layer', 'form','element','table'], function(){
+        var layer = layui.layer
+            ,form = layui.form
+            ,element = layui.element;
+        var table = layui.table;
+    });
+
+</script>
+
+
+
+<script type="text/javascript" th:inline="javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+    var data = [];
+    var infos = [];
+    var canNum = [[${canNum}]];
+    console.log(canNum)
+    if (canNum === true){
+        data = [[${heads}]];
+        infos.push([[${maxDatas.get(0).getData()}]]);
+        infos.push([[${minDatas.get(0).getData()}]]);
+        infos = infos.concat([[${infos}]]);
+        console.log(infos);
+    }
+    else {
+        var datas = [[${infos}]];
+        console.log(datas);
+        for (var i=0;i<datas.length;i++){
+            infos.push(datas[i].num);
+            data.push(datas[i].name);
+        }
+    }
+
+    // 指定图表的配置项和数据
+    var option = {
+        tooltip: {},
+        legend: {
+            data:['数据']
+        },
+        xAxis: {
+            data: data
+        },
+        yAxis: {},
+        series: [{
+            name: '数据',
+            type: 'bar',
+            data: infos,
+            itemStyle: {
+                normal: {
+                    color: '#a8bcd4'
+                }
+            }
+        }]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+</body>
+</html>
