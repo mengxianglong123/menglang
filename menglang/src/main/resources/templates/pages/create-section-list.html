@@ -1,0 +1,23 @@
+<div class="page" xmlns:th="http://www.thymeleaf.org">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left">
+                <a href="#" class="link back">
+                    <i class="icon icon-back"></i>
+                    <span>返回</span>
+                </a>
+            </div>
+            <div class="title" th:text="${bookName}"></div>
+            <div class="right"></div>
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="list links-list" style="margin-top: 5px;">
+            <ul>
+                <li th:each="section : ${sections}">
+                    <a th:href="${'/sectionDetail/?id='+section.id}" th:text="${section.name}"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

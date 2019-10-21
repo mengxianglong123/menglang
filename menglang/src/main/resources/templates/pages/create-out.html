@@ -1,0 +1,18 @@
+<div class="page page-poemDetail" xmlns:th="http://www.thymeleaf.org">
+    <!-- 头部导航栏 -->
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="title" style="margin: 0 auto"><img src="../static/images/nomal/logo.png" alt="" id="logo"></div>
+        </div>
+    </div>
+    <div class="page-content">
+        <div style="text-align: center;width: 100%;font-size: 16px;color: #777777;margin-bottom: 15px;
+display: flex;justify-content: center;align-items: center;margin-top: 5px;">
+            <i class="iconfont iconwancheng" style="color:#DD4455;margin-right: 3px;"></i> <span style="color: #DD4455;">创作完成！</span><span>长按即可保存您的作品</span>
+        </div>
+        <a class="button button-fill-ios link create-end" onclick="createBack()">
+            返回首页
+        </a>
+        <img th:src="@{'getCreateImage?time='+${time}}" alt="" style="width: 100%">
+    </div>
+</div>

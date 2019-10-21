@@ -1,0 +1,18 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.menglangpoem.mobile.mapper.CreateFontMapper">
+   <resultMap id="CreateFontMapper" type="CreateFont">
+       <id column="create_font_id" property="id"/>
+       <result column="create_font_name" property="name"/>
+   </resultMap>
+    <!--***********************按照id查询字体***********************-->
+    <select id="selById" resultMap="CreateFontMapper">
+        select * from create_font where create_font_id = #{id}
+    </select>
+
+    <!--***********************查询所有字体***********************-->
+    <select id="selAll" resultMap="CreateFontMapper">
+        select * from create_font
+    </select>
+</mapper>

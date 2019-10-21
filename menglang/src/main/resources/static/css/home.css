@@ -1,0 +1,144 @@
+.page-home{
+    width: 100%;
+}
+
+/************轮播图*************/
+.swiper-slide img{
+    width: 100%;
+    height: auto;
+}
+.swiper-pagination-bullet-active{
+    background-image: linear-gradient( 135deg, #FFD3A5 10%, #FD6585 100%);
+    opacity: 0.7;
+}
+
+/************功能块*************/
+.funcs{
+    width: 100%;
+}
+.func-row{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding: 25px;
+    background: white;
+    box-sizing: border-box;
+}
+.func{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.func i{
+    font-size: 28px;
+    color: white;
+    background-image: linear-gradient( 135deg, #3C8CE7 10%, #00EAFF 100%);
+    margin-bottom: 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    text-align: center;
+    line-height: 50px;
+    box-shadow: 2px 5px 10px ;
+}
+.func .func-text{
+    color: #888888;
+}
+
+/************热门诗词*************/
+.hot-title{
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+.hot-title i{
+    color: #DD4455;
+}
+.hot-title .link{
+    float: right;
+    line-height: 16px;
+    font-size: 12px;
+    margin-top: 5px;
+}
+.hot-row{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.hot{
+    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.hot-img{
+    display: inline-block;
+    width: 55px;
+    height: 55px;
+    background-image: url("../images/poemTags/边塞诗.jpg");
+    background-size: cover;
+    background-position: center center;
+    margin-bottom: 5px;
+    border-radius: 50%;
+    border: 5px solid rgba(235,235,235,.85);
+}
+.hot-name{
+    font-size: 14px;
+    color: #777777;
+}
+.hot-poems-title:after{
+    margin-top: 2px;
+    content: "千年文化，经典之宝";
+    font-size:11px;
+    color: #888888;
+    font-weight: lighter;
+}
+/************热门诗人*************/
+.hot-author-img{
+    background-position: center top;
+}
+.hot-authors-title:after{
+    margin-top: 2px;
+    content: "迁客骚人，腹有书华";
+    font-size:11px;
+    color: #888888;
+    font-weight: lighter;
+}
+/************所有标签页*************/
+.all-tag:after{
+    display: none !important;
+}
+.all-tag{
+    text-align: center;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}.all-tag i{
+    margin-right: 3px;
+ }
+
+/************底部*************/
+.home-footer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.home-footer .logo{
+    width: 100px;
+}
+.home-footer-text{
+    display: block;
+    color: #777777;
+    font-size: 11px;
+    margin-top: 5px;
+}

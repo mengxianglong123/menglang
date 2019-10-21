@@ -1,0 +1,31 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.menglangpoem.mobile.mapper.PhraseMapper">
+    <resultMap id="PhraseMapper" type="Phrase">
+        <id column="phrase_id" property="id"/>
+        <result column="phrase_content" property="content"/>
+        <result column="phrase_poem_id" property="poemId"/>
+        <result column="phrase_poem_title" property="poemTitle"/>
+        <result column="phrase_poem_author" property="poemAuthor"/>
+        <result column="phrase_time" property="time"/>
+        <result column="phrase_author_id" property="authorId"/>
+        <result column="phrase_author_img" property="authorImg"/>
+    </resultMap>
+
+    <!--***********************分页查询所有名句***********************-->
+    <select id="selAllPage" resultMap="PhraseMapper">
+        select * from phrase limit #{pageNum},20
+    </select>
+
+    <!--***********************模糊查询名句***********************-->
+    <select id="selByKey" resultMap="PhraseMapper">
+        select * from phrase where phrase_content like concat('%',#{keyword},'%') limit 0,10
+    </select>
+
+    <!--***********************随机查询名句***********************-->
+    <select id="selRand" resultMap="PhraseMapper">
+        select * from phrase order by rand() limit 10
+    </select>
+
+</mapper>

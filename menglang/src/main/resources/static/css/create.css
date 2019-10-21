@@ -1,0 +1,145 @@
+/****************创作首页****************/
+.create-top{
+    width: 100%;
+    height: 200px;
+    background: url("../images/nomal/笔墨创作test.jpg");
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.create-begin{
+    width: 120px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    background-color: #DD4455;
+}
+.create-begin i{
+    font-weight: normal;
+}
+/****************选择创作模板****************/
+.create-imgs{
+    width: 100%;
+    padding: 25px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.create-img{
+    position: relative;
+    width: 95%;
+    margin-bottom: 20px;
+}
+.create-img .img-name{
+    color: white;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    font-size: 15px;
+    text-align: center;
+    background-image: linear-gradient(top, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.2) 98%, #FFFFFF 100%);
+}
+.create-img img{
+    width: 100%;
+
+    display: block;
+    box-shadow: 5px 2px 30px #555555;
+    border-radius: 15px;
+}
+.img-select-mark{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(119,119,119,.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+.img-select-mark i{
+    font-size: 35px;
+    color: #DD4455;
+}
+/****************输入创作内容****************/
+#create-form{
+    margin: 0;
+}
+#create-form input,textarea{
+    font-size: 16px !important;
+}
+#create-words textarea{
+    height: 150px;
+}
+/****************选择字体****************/
+.create-fonts{
+    width: 100%;
+    padding: 25px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.create-font{
+    position: relative;
+    width: 85%;
+    margin-bottom: 20px;
+}
+.create-font .font-name{
+    position: absolute;
+    width: 100%;
+    bottom: 1px;
+    text-align: center;
+    letter-spacing: 2px;
+    color: #777777;
+    font-size: 13px;
+}
+.create-font img{
+    width: 100%;
+    display: block;
+    box-shadow: 1px 2px 7px #555555;
+    border-radius: 15px;
+}
+/************生成图片页面************/
+.create-end{
+    width: 120px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    background-color: #DD4455;
+    margin: 10px auto;
+}
+
+/****************创作页面书籍列表****************/
+.create-book-list{
+    margin-top: 5px;
+}
+.create-book-list-title{
+    color: #353535;
+    font-size: 17px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    margin-top: 5px;
+    justify-content: center;
+}
+.create-book-list-title i{
+    color: #DD4455;
+    font-weight: normal;
+    margin: 5px;
+    /*margin-right: 5px;*/
+}

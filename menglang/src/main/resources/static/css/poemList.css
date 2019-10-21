@@ -1,0 +1,19 @@
+.page-poemList .item-title-row:before{
+    content: "";
+    display: none !important;
+}
+.page-poemList .item-text{
+    margin-top: 8px;
+    margin-left: 8px;
+}
+.poem-list li{
+    background-image: url("../images/nomal/texture.png");
+    background-color: rgb(253,253,253);
+}
+.poem-list{
+    margin-top: 15px !important;
+}
+.page-authorPoemList .item-text{
+    margin-top: 8px;
+    margin-left: 8px;
+}

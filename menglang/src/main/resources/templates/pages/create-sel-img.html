@@ -1,0 +1,27 @@
+<div class="page" xmlns:th="http://www.thymeleaf.org">
+    <!-- 头部导航栏 -->
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left">
+                <a href="#" class="link back">
+                    <i class="icon icon-back"></i>
+                    <span>返回</span>
+                </a>
+            </div>
+            <div class="title" style="margin: 0 auto">选择创作模板</div>
+            <a class="right link" onclick="toWrite()">
+                下一步
+            </a>
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="create-imgs">
+
+            <div class="create-img create-img-selected" th:each="img : ${imgs}">
+                <img th:src="@{${path+img.name}}" th:alt="${img.id}">
+                <div th:text="${#strings.substringBefore(img.name,'.')}" class="img-name"></div>
+            </div>
+
+        </div>
+    </div>
+</div>

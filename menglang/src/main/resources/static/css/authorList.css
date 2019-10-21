@@ -1,0 +1,7 @@
+.author-list li{
+    background-image: url("../images/nomal/texture.png");
+    background-color: rgb(253,253,253);
+}
+.author-list{
+    margin-top: 15px !important;
+}

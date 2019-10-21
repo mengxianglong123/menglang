@@ -1,0 +1,22 @@
+<div class="page page-authorList" xmlns:th="http://www.thymeleaf.org">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left">
+                <a href="#" class="link back">
+                    <i class="icon icon-back"></i>
+                    <span>返回</span>
+                </a>
+            </div>
+            <div class="title">诗人墨堂</div>
+            <a class="right iconfont iconsousuo1 link" href="/search/"></a>
+        </div>
+    </div>
+    <div class="page-content infinite-scroll-content author-inf" th:id="${'authorList-' + authorListId}">
+        <div class="list media-list author-list" >
+            <ul>
+            </ul>
+        </div>
+        <div class="preloader infinite-scroll-preloader authorList-preloader"
+             th:id="'authorList-preloader-' + ${authorListId}"></div>
+    </div>
+</div>

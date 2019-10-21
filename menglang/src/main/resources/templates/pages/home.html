@@ -1,0 +1,80 @@
+<div class="page" xmlns:th="http://www.thymeleaf.org">
+    <!-- 头部导航栏 -->
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="title" style="margin: 0 auto"><img src="../static/images/nomal/logo.png" alt="" id="logo"></div>
+        </div>
+    </div>
+    <div class="page-content page-home">
+        <!--*********************轮播图*********************-->
+        <div class="swiper-container swiper-init" data-autoplay="true" data-pagination='{"el": ".swiper-pagination"}' data-loop="true">
+            <!-- Slides wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <a class="swiper-slide"><img src="../static/images/banners/banner1.jpg" alt=""></a>
+                <a class="swiper-slide"><img src="../static/images/banners/banner2.jpg" alt=""></a>
+                <a class="swiper-slide"><img src="../static/images/banners/banner3.jpg" alt=""></a>
+                <a class="swiper-slide"><img src="../static/images/banners/banner4.jpg" alt=""></a>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+
+        <!--*********************功能块*********************-->
+        <div class="funcs">
+            <div class="func-row" href="">
+                <a class="func link" href="/authorList/?pageName=all" onclick="openAuthorList('all')">
+                    <i class="iconfont iconiconfont-poetry"  style="font-size: 33px;"></i>
+                    <span class="func-text">诗人墨堂</span>
+                </a>
+                <a class="func link" href="/poemList/?pageName=诗词书斋" th:onclick="openPoemList('selAllPoemPage',null,'诗词书斋')">
+                    <i class="iconfont iconzhujian" style="background-image: linear-gradient( 135deg, #F5CBFF 10%, #C346C2 100%);"></i>
+                    <span class="func-text">诗词书斋</span>
+                </a>
+                <a class="func link" href="/phraseList/" onclick="openPhraseList()">
+                    <i class="iconfont iconshu" style="background-image: linear-gradient( 135deg, #90F7EC 10%, #32CCBC 100%);" ></i>
+                    <span class="func-text">名句香阁</span>
+                </a>
+                <a class="func link" onclick="upOpen()">
+                    <i class="iconfont icongushicijianshang" style="background-image: linear-gradient( 135deg, #FFD3A5 10%, #FD6585 100%);"></i>
+                    <span class="func-text">孟郎诗词</span>
+                </a>
+            </div>
+        </div>
+
+        <!--*********************热门诗词*********************-->
+
+        <div class="block block-strong hot-poems hots">
+            <div class="hot-poems-title hot-title"><i class="iconfont iconremen"></i>热门诗词 <a href="/tagList/" class="link">查看更多></a> </div>
+           <div class="hot-poem-row hot-row" th:each="i:${#numbers.sequence(0,2)}">
+               <div class="hot-poem hot" th:each="j:${#numbers.sequence(1,4)}" th:with="t=${hotTags.get(j+i*4-1)}">
+                   <a  class="hot-poem-img link hot-img" th:style="  'background-image:url(' + '../static/images/poemTags/'+${t.name}+'.jpg'    " th:href="'/poemList/?pageName='+${t.name}" th:onclick="openPoemList('selPoemByTagPage',[[${t.name}]],[[${t.name}]])"></a>
+                   <span class="hot-poem-name hot-name" th:text="${t.name}"></span>
+               </div>
+           </div>
+        </div>
+
+
+        <!--*********************热门诗人*********************-->
+        <div class="block block-strong hot-authors hots">
+            <div class="hot-authors-title hot-title"><i class="iconfont iconremen"></i>热门诗人 <a href="/authorList/?pageName=all" class="link" onclick="openAuthorList('all')">查看更多></a> </div>
+
+            <div class="hot-author-row hot-row" th:each="i:${#numbers.sequence(0,2)}">
+
+                <div class="hot-author hot" th:each="j:${#numbers.sequence(1,4)}" th:with="a=${hotAuthors.get(j+i*4-1)}">
+                    <a  class="hot-author-img link hot-img" th:style="'background-image:url(' + '../static/images/authorImgs/'+${a.name}+'.jpg'" th:href="'/authorDetail/?id='+${a.num}"></a>
+                    <span class="hot-author-name hot-name" th:text="${a.name}"></span>
+                </div>
+
+            </div>
+        </div>
+
+        <!--*********************底部组件*********************-->
+        <div class="home-footer">
+            <img src="../static/images/nomal/logo.png" alt="" class="logo">
+            <span class="home-footer-text">©2019孟郎诗词 Mobile</span>
+        </div>
+
+
+        </div>
+</div>

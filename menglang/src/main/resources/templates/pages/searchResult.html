@@ -1,0 +1,56 @@
+<div class="page page-searchResult page-with-subnavbar" id="page-searchResult" xmlns:th="http://www.thymeleaf.org">
+    <div class="navbar">
+        <div class="navbar-inner">
+
+                <a class="link back" style="color: #777777"><i class="icon icon-prev"></i></a>
+                <div class="searchbar-backdrop"></div>
+                <form class="searchbar" id="searchResult-form">
+                    <div class="searchbar-inner">
+                        <div class="searchbar-input-wrap">
+                            <input type="search" placeholder="输入关键词" th:value="${keyword}" id="result-input" class="search-input">
+                            <i class="searchbar-icon"></i>
+                            <span class="input-clear-button"></span>
+                        </div>
+                    </div>
+                </form>
+
+            <!-- Subnavbar -->
+            <div class="subnavbar">
+                <div class="subnavbar-inner">
+                    <!--*********工具栏*********-->
+                    <div class="toolbar tabbar toolbar-top pageResult-toolbar">
+                        <div class="toolbar-inner">
+                            <!-- additional "data-route-tab-id" must match to tab's ID in the specified routes -->
+                            <a href="./" class="tab-link search-tab" data-route-tab-id="search-poemList-all">综合</a>
+
+
+                            <a href="./search-authorList/" class="tab-link" data-route-tab-id="search-authorList">诗人</a>
+
+
+                            <a href="./search-poemList-title/" class="tab-link search-tab" data-route-tab-id="search-poemList-title">标题</a>
+
+                            <a href="./search-poemList-content/" class="tab-link search-tab" data-route-tab-id="search-poemList-content">诗句</a>
+
+
+                            <a href="./search-poemList-tag/" class="tab-link search-tab" data-route-tab-id="search-poemList-tag">分类</a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!--**************************搜索结果选项卡********************-->
+    <div class="tabs-animated-wrap">
+        <div class="tabs tabs-routable">
+            <div class="tab page-content result-tab" id="search-poemList-all" data-req="searchOverAll" th:data-key="${keyword}"></div>
+            <div class="tab page-content author-tab" id="search-authorList" data-req="searchAuthor"
+                 th:data-key="${keyword}"></div>
+            <div class="tab page-content result-tab" id="search-poemList-title" data-req="searchTitle" th:data-key="${keyword}"></div>
+            <div class="tab page-content result-tab" id="search-poemList-content" data-req="searchContent" th:data-key="${keyword}"></div>
+            <div class="tab page-content result-tab" id="search-poemList-tag" data-req="searchTag" th:data-key="${keyword}"></div>
+        </div>
+    </div>
+</div>

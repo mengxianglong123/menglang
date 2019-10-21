@@ -1,0 +1,35 @@
+#search .searchbar-inner{
+    padding-left: 0 !important;
+}
+#search .navbar{
+    background-color: #f4f4f4;
+}
+#search .searchbar{
+    background-color: #f4f4f4;
+}
+#search .searchbar:after{
+    display: none !important;
+}
+.hot-search{
+    width: 100%;
+    margin-top: 5px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+.hot-search-title{
+    color: #777777;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+.search-dropdown{
+    position: relative;
+    top: -50px;
+    left: 0;
+}
+.autocomplete-dropdown{
+    background: white !important;
+    font-size: 15px;
+}
+.input-focus{
+    border: none !important;
+}

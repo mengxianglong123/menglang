@@ -1,0 +1,115 @@
+/*************************顶部gif动图*********************/
+.find-gif{
+    width: 100%;
+    background-size: cover !important;
+    background-repeat: no-repeat;
+    height: 200px;
+    background-position: center center !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-family: kai;
+}
+.find-gif-content{
+    color: white;
+    font-family: kai;
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+}
+.find-gif-head{
+    position: absolute;
+    display: flex;
+    bottom: -1rem;
+    align-items: center;
+    color: white;
+}
+.find-gif-head img{
+    width: 4rem;
+    border-radius: 50%;
+    border: 5px solid rgba(255,255,255,.85);
+}
+.find-gif-head-text{
+    margin-left: 3px;
+    display: flex;
+    flex-direction: column;
+}
+.find-gif-head-name{
+    font-weight: bold;
+    font-size: 18px;
+}
+.find-gif-title{
+    position: absolute;
+    top: 25px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+}
+/*************************名句短语*********************/
+.find-phrase{
+    /*margin-top: 20px;*/
+    width: 100%;
+}
+.find-phrase-item{
+    margin-top: 20px;
+    background: white;
+    padding: 15px;
+    box-sizing: border-box;
+    position: relative;
+}
+.find-phrase-head{
+    display: flex;
+    align-items: center;
+}
+.find-phrase-head .find-phrase-head-img{
+    width: 50px;
+    height: 50px;
+    background-size: cover !important;
+    background-position: center center !important;
+    border-radius: 50%;
+    border: 3px solid rgba(235,235,235,.85);
+}
+.find-phrase-head-text{
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+}
+.find-phrase-head-text .head-text-name{
+    font-size: 17px;
+    font-weight: bold;
+    color: #c04851;
+}
+.find-phrase-head-text .head-text-time{
+    color: #777777;
+    font-size: 14px;
+}
+.find-phrase-content{
+    color: black;
+    margin-top: 15px;
+    background-size: cover !important;
+    background-position: center center !important;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+    font-family: kai;
+    border-radius: 15px;
+    box-shadow: 5px 5px 20px #777777;
+    font-weight: bold;
+}
+.find-phrase-foot{
+    margin-top: 15px;
+    font-size: 15px;
+    font-style: italic;
+    color: #777777;
+    text-align: right;
+    font-family: kai;
+}
+.find-phrase-share{
+    position: absolute;
+    top: 15px;
+    color: #777777;
+    right: 15px;
+}

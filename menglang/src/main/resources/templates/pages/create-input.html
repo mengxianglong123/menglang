@@ -1,0 +1,50 @@
+<div class="page" xmlns:th="http://www.thymeleaf.org">
+    <!-- 头部导航栏 -->
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left">
+                <a href="#" class="link back">
+                    <i class="icon icon-back"></i>
+                    <span>返回</span>
+                </a>
+            </div>
+            <div class="title" style="margin: 0 auto">创作内容</div>
+            <a class="right link" onclick="selFont()">
+                下一步
+            </a>
+        </div>
+    </div>
+    <div class="page-content">
+        <form class="list" id="create-form">
+            <ul>
+                <li>
+                    <div class="item-content item-input">
+                        <div class="item-inner">
+                            <div class="item-input-wrap">
+                                <input type="text" name="title" placeholder="标题 / 可为空">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="item-content item-input">
+                        <div class="item-inner">
+                            <div class="item-input-wrap" id="create-words">
+                                <textarea  name="words" placeholder="正文 / 不可空(请使用标点符号逗号、句号或者分号分隔，系统会自动识别，内容不适合太长哦！)"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="item-content item-input">
+                        <div class="item-inner">
+                            <div class="item-input-wrap">
+                                <input type="text" name="name" placeholder="落款(署名) / 可为空">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </form>
+    </div>
+</div>

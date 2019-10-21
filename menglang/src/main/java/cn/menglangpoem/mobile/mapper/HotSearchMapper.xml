@@ -1,0 +1,15 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.menglangpoem.mobile.mapper.HotSearchMapper">
+    <resultMap id="HotSearchMapper" type="HotSearch">
+        <id column="hot_search_id" property="id"/>
+        <result column="hot_search_content" property="content"/>
+        <result column="hot_search_num" property="num"/>
+    </resultMap>
+
+    <!--********************随机查询热门搜索*****************-->
+    <select id="selRand" resultMap="HotSearchMapper">
+        select * from hot_search order by rand() limit 8
+    </select>
+</mapper>

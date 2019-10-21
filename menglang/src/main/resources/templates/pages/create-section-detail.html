@@ -1,0 +1,18 @@
+<div class="page" xmlns:th="http://www.thymeleaf.org">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left">
+                <a href="#" class="link back">
+                    <i class="icon icon-back"></i>
+                    <span>返回</span>
+                </a>
+            </div>
+            <div class="title" th:text="${section.name}"></div>
+            <div class="right"></div>
+        </div>
+    </div>
+    <div class="page-content">
+       <div th:utext="${section.content}" style="font-size: 16px;">
+       </div>
+    </div>
+</div>

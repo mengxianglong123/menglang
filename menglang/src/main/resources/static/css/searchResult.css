@@ -1,0 +1,63 @@
+/*******清除默认样式********/
+
+
+
+/***********选项卡样式1(按钮形式)***********/
+/*.pageResult-toolbar .tab-link:first-child{*/
+    /*border-radius: 5px 0 0 5px;*/
+/*}*/
+/*.pageResult-toolbar .tab-link:last-child{*/
+    /*border-radius: 0 5px 5px 0;*/
+/*}*/
+/*.pageResult-toolbar .tab-link{*/
+    /*display: inline-block;*/
+    /*height: 70% !important;*/
+    /*color: #c04851;*/
+    /*border: 1px solid #c04851;*/
+/*}*/
+/*.pageResult-toolbar .tab-link-active{*/
+    /*color: #fff;*/
+    /*background: #c04851;*/
+/*}*/
+
+
+/***********选项卡样式2(下滑线形式)***********/
+.pageResult-toolbar .tab-link{
+    /*border-bottom: 2px solid #f4f4f4;*/
+    display: inline-block;
+    color: #777777;
+    height: 85% !important;
+    border-bottom: 2px solid transparent;
+}
+.pageResult-toolbar .tab-link-active{
+    border-bottom: 2px solid #BB4455 !important;
+    color: #BB4455;
+}
+/***********搜索结果为空***********/
+.no-result{
+    margin-top: 100px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.no-inner{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.no-inner{
+    font-size: 17px;
+    color: #777777;
+}
+.no-inner i{
+    margin-bottom: 5px;
+    font-size: 50px;
+    color: #BB4455;
+}
+
+
+
+#page-searchResult .subnavbar{
+    z-index: -100 !important;
+}

@@ -1,0 +1,108 @@
+/*-------------诗词卡片---------*/
+.poem-card{
+    width: 98%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    box-sizing: border-box;
+    background-color: white;
+    margin: 8px auto;
+    border-radius: 15px;
+    background-size: cover,30%,35%;
+    background-position: left top,right top,left bottom;
+    background-repeat: repeat,no-repeat,no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 2px rgba(10,16,20,.24),0 0 2px rgba(10,16,20,.25);
+}
+.poem-title{
+    font-size: 17px;
+    font-weight: bold;
+    color: #DD4455;
+    letter-spacing: 2px;
+    text-align: center;
+}
+.poem-author{
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #777777;
+}
+.poem-author span{
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+    font-size: 17px;
+    color: rgba(245,245,245,85);
+    font-family: kai;
+    font-weight: lighter;
+    width: 30px;
+    height: 30px;
+    background-image: url("../images/nomal/time-yin.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 5px;
+}
+.poem-content{
+    text-align: center;
+    margin-top: 15px;
+    font-family: kai;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.poem-tag{
+    color: #BB4455;
+    font-family: kai;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.chip{
+    margin-left: 5px;
+}
+.poem-tag .chip-label{
+    color: #BB4455;
+    font-weight: bold;
+}
+
+/*-------------赏析部分-------------*/
+.poem-comment{
+    width: 98%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    box-sizing: border-box;
+    background-color: white;
+    margin: 8px auto;
+    border-radius: 15px;
+    background-size: cover,30%,30%;
+    background-image: url("../images/nomal/texture.png"),url("../images/nomal/mei.png");
+    background-position: left top,right top;
+    background-repeat: repeat,no-repeat,no-repeat;
+    box-shadow: 0 2px 2px rgba(10,16,20,.24),0 0 2px rgba(10,16,20,.25);
+}
+.poem-comment-title{
+    display: flex;
+    align-items: center;
+    color: #DD4455;
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.poem-comment-title i{
+    margin-right: 5px;
+}
+.poem-comment-content{
+    font-family: kai;
+    font-size: 17px;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,26 @@
+.phrase-card{
+    height: 150px;
+    width: 90%;
+    margin: 15px auto;
+    background-image: url("../images/nomal/phraseBcak.jpg");
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    box-shadow: 0 2px 2px rgba(10,16,20,.24),0 0 2px rgba(10,16,20,.12);
+    font-family: kai;
+    flex-wrap: nowrap;
+
+}
+.phrase-content{
+    font-size: 18px;
+    font-weight: bold;
+}
+.phrase-footer{
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+}

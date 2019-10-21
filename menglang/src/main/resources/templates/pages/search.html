@@ -1,0 +1,38 @@
+
+<div class="page page-search"  xmlns:th="http://www.thymeleaf.org">
+    <div class="navbar no-hairline">
+        <div class="navbar-inner">
+            <a class="popup-close link back" style="color: #777777"><i class="icon icon-prev"></i></a>
+
+            <form class="searchbar" id="search-form">
+                <div class="searchbar-inner">
+                    <div class="searchbar-input-wrap">
+                        <input type="search" placeholder="输入诗人名称、诗句等关键词" id="search-input" class="search-input" autocomplete="off">
+                        <i class="searchbar-icon"></i>
+                        <span class="input-clear-button"></span>
+                    </div>
+                    <span class="searchbar-disable-button">取消</span>
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+   <div class="page-content">
+       <div class="searchbar-backdrop"></div>
+       <div class="search-dropdown">
+
+       </div>
+       <div class="hot-search">
+           <div class="hot-search-title">
+               热门搜索
+           </div>
+           <div class="hot-search-chips">
+               <div class="chip" th:each="c : ${chips}">
+                   <a class="chip-label link search-chip" th:text="${c.content}"></a>
+               </div>
+           </div>
+       </div>
+       <div class="search-dropdown"></div>
+   </div>
+</div>

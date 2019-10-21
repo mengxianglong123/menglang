@@ -1,0 +1,146 @@
+/****************诗人卡片****************/
+.author-card{
+    display: flex;
+    justify-content: flex-start;
+    background-image: url("../images/nomal/author-back.jpg");
+    padding: 10px;
+    background-size: cover;
+    border-radius: 15px;
+
+    box-shadow: 0 2px 2px rgba(10,16,20,.24),0 0 2px rgba(10,16,20,.45);
+    margin: 15px auto;
+    width: 90%;
+    position: relative;
+    font-family: kai;
+}
+.author-card-img img{
+    border-radius: 15px;
+    border: 2px solid rgba(187,68,85,.5);
+}
+.author-text{
+    width: 60%;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.author-name{
+    font-size: 20px;
+    font-weight: bold;
+    color: #DD4455;
+}
+.author-time{
+    font-size: 17px;
+    color: #c04851;
+    font-weight: bold;
+}
+.author-label{
+    color: #BB4455;
+    font-size: 18px;
+    margin-top: 5px;
+    font-weight: bold;
+    width: 75%;
+    display: inline-block;
+}
+.author-label .chip-label{
+    color: #BB4455;
+}
+.author-card .author-text{
+    display: flex;
+    flex-direction: column;
+}
+.author-logo{
+    width: 100px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+.author-public{
+    width: 70px;
+    position: absolute;
+    right: 15px;
+    bottom: 5px;
+}
+
+/****************诗人简介****************/
+.author-intro{
+    border-radius: 15px;
+    box-shadow: 0 2px 2px rgba(10,16,20,.24),0 0 2px rgba(10,16,20,.25);
+    padding: 20px;
+    width: 100%;
+    background-color: white;
+    background-image: url("../images/nomal/texture.png"),url("../images/nomal/flower.png");
+    background-size: 10%,25%;
+    background-repeat: repeat,no-repeat;
+    background-position: left top,right top;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.author-intro-title{
+
+    color: #BB4455;
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+.author-intro-title i{
+    color: #DD4455;
+    font-size: 19px;
+    margin-right: 3px;
+}
+.author-intro-text{
+    margin-top: 10px;
+    text-indent: 2rem;
+    display: flex;
+    font-size: 19px;
+    font-family: kai;
+}
+
+
+/****************诗人作品****************/
+.simple-poems-title{
+    font-size: 18px;
+    font-weight: bold;
+    color: #777777;
+    display: flex;
+    align-items: center;
+}
+.yin{
+    height: 23px;
+    margin-right: 5px;
+}
+.author-simple-poems{
+    background-image: url("../images/nomal/texture.png"),url("../images/nomal/mei.png"),url("../images/nomal/desk.png");
+    background-size: 10%,35%,40%;
+    background-repeat: repeat,no-repeat,no-repeat;
+    background-position: left top,right top,left bottom;
+    /*border-radius: 0 0 15px 15px;*/
+    overflow: hidden;
+    box-shadow: 0 2px 2px rgba(10,16,20,.24),0 0 2px rgba(10,16,20,.25);
+}
+.author-simple-poem{
+    margin-bottom: 15px;
+}
+.simple-poem-title{
+    font-size: 17px;
+    font-weight: bold;
+    color: #DD4455;
+    margin-bottom: 5px;
+}
+.simple-poem-content{
+    font-size: 18px;
+    font-family: kai;
+}
+.simple-more{
+    font-size: 18px;
+    width: 100%;
+    color: #DD4455;
+    display: flex;
+    margin: 25px auto;
+    justify-content: center;
+    align-items: center;
+    font-family: kai;
+    font-weight: bold;
+}
+.simple-more i{
+    font-size: 15px;
+}

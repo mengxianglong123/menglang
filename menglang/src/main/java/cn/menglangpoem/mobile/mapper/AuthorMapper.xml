@@ -1,0 +1,45 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.menglangpoem.mobile.mapper.AuthorMapper">
+    <resultMap id="HotAuthorMapper" type="HotAuthor">
+        <id column="hot_author_id" property="id"/>
+        <result column="hot_author_name" property="name"/>
+        <result column="hot_author_num" property="num"/>
+    </resultMap>
+
+    <resultMap id="AuthorMapper" type="Author">
+        <id column="author_id" property="id"/>
+        <result column="author_name" property="name"/>
+        <result column="author_time" property="time"/>
+        <result column="author_label" property="label"/>
+        <result column="author_tag" property="tag"/>
+        <result column="author_introduction" property="introduction"/>
+        <result column="author_total" property="total"/>
+        <result column="author_img" property="img"/>
+    </resultMap>
+
+    <!--***********************随机查询部分热门诗人***********************-->
+    <select id="selHotSome" resultMap="HotAuthorMapper">
+        select * from hot_author order by  rand() limit 12
+    </select>
+    <!--***********************分页查询所有诗人***********************-->
+    <select id="selAllPage" resultMap="AuthorMapper">
+        select * from author limit #{pageNum},20
+    </select>
+
+    <!--***********************按照id查询诗人***********************-->
+    <select id="selById" resultMap="AuthorMapper">
+        select * from author where author_id = #{authorId}
+    </select>
+
+    <!--***********************按照姓名查询诗人***********************-->
+    <select id="selByName" resultMap="AuthorMapper">
+        select * from author where author_name like concat('%',#{authorName},'%') limit #{pageNum},20
+    </select>
+
+    <!--***********************名句查询诗人***********************-->
+    <select id="selForPhrase" resultMap="AuthorMapper">
+        select * from author where author_name = #{authorName}
+    </select>
+</mapper>

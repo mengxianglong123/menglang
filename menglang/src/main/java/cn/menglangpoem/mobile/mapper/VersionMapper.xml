@@ -1,0 +1,15 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.menglangpoem.mobile.mapper.VersionMapper">
+   <resultMap id="VersionMapper" type="Version">
+       <id column="version_id" property="id"/>
+       <result column="version_time" property="time"/>
+       <result column="version_name" property="name"/>
+       <result column="version_num" property="num"/>
+       <result column="version_content" property="content"/>
+   </resultMap>
+    <select id="selAll" resultMap="VersionMapper">
+        select * from version
+    </select>
+</mapper>

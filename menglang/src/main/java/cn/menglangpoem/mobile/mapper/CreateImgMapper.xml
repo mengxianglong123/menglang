@@ -1,0 +1,28 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.menglangpoem.mobile.mapper.CreateImgMapper">
+    <resultMap id="CreateImgMap" type="CreateImg">
+        <id column="create_img_id" property="id"/>
+        <result column="create_img_name" property="name"/>
+        <result column="create_img_color" property="color"/>
+        <result column="create_img_fontsize" property="fontsize"/>
+        <result column="create_img_space" property="space"/>
+        <result column="create_img_control_num" property="controlNum"/>
+        <result column="create_img_startX" property="startX"/>
+        <result column="create_img_startY" property="startY"/>
+        <result column="create_img_endX" property="endX"/>
+        <result column="create_img_endY" property="endY"/>
+        <result column="create_img_type" property="type"/>
+        <result column="create_img_dir" property="dir"/>
+    </resultMap>
+    <!--***********************按照id查询创作模板***********************-->
+    <select id="selById" resultMap="CreateImgMap">
+        select * from create_img where create_img_id = #{id}
+    </select>
+
+    <!--***********************查询所有创作模板***********************-->
+    <select id="selAll" resultMap="CreateImgMap">
+        select * from create_img
+    </select>
+</mapper>

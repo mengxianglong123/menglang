@@ -1,0 +1,37 @@
+<!--********************诗词详情页*********************-->
+<div class="page page-poemDetail" xmlns:th="http://www.thymeleaf.org">
+    <!-- 头部导航栏 -->
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left">
+                <a href="#" class="link back">
+                    <i class="icon icon-back"></i>
+                    <span>返回</span>
+                </a>
+            </div>
+            <div class="title" style="margin: 0 auto"><img src="../static/images/nomal/logo.png" alt="" id="logo"></div>
+            <a class="right iconfont iconsousuo1 link" href="/search/"></a>
+        </div>
+    </div>
+
+    <div class="page-content" >
+        <div class="poem-card" th:style="${bm+back1+back2+back3+';'}">
+            <div class="poem-title">[[${poem.title}]]</div>
+            <div class="poem-author"><span>[[${poem.time}]]</span>[[${poem.author}]]</div>
+            <div class="poem-content">[(${poem.content})]</div>
+            <div class="poem-tag" th:if="${tags[0] ne ''}">
+                <div class="chip" th:each="t : ${tags}">
+                    <div class="chip-label" th:text="${t}"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="poem-comment">
+            <div class="poem-comment-title"><i class="iconfont iconmaobi-copy"></i>赏析</div>
+            <div class="poem-comment-content">
+                [(${poem.comment})]
+            </div>
+
+        </div>
+    </div>
+</div>

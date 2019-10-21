@@ -1,0 +1,23 @@
+<li xmlns:th="http://www.thymeleaf.org" th:each="i:${#numbers.sequence(0,9)}">
+    <div class="find-phrase-item">
+        <div class="find-phrase-head">
+            <a class="find-phrase-head-img link"
+               th:style="${phrases.get(i).getAuthorImg()}"
+               th:href="'/authorDetail/?id='+${phrases.get(i).getAuthorId()}"></a>
+            <div class="find-phrase-head-text">
+                <div class="head-text-name" th:text="${phrases.get(i).getPoemAuthor()}"></div>
+                <div class="head-text-time" th:text="${phrases.get(i).getTime()}"></div>
+            </div>
+        </div>
+        <a class="find-phrase-content link"
+           th:style="${phraseBacks.get(i).getName()}"
+           th:href="'/poemDetail/?id='+${phrases.get(i).getPoemId()}">
+            <span th:style="'color:'+${phraseBacks.get(i).getColor()}"
+                  th:text="${phrases.get(i).getContent()}"></span>
+        </a>
+        <div class="find-phrase-foot" th:text="'---《'+${phrases.get(i).getPoemTitle()}+'》'"></div>
+        <a href="" class="link find-phrase-share">
+            <i class="iconfont iconfeiji"></i>
+        </a>
+    </div>
+</li>

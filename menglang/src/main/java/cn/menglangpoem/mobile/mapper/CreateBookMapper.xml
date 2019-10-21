@@ -1,0 +1,30 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.menglangpoem.mobile.mapper.CreateBookMapper">
+    <resultMap id="CreateBookMapper" type="CreateBook">
+        <id column="create_book_id" property="id"/>
+        <result column="create_book_name" property="name"/>
+        <result column="create_book_author" property="author"/>
+        <result column="create_book_intro" property="intro"/>
+    </resultMap>
+    <resultMap id="CreateSectionMapper" type="CreateSection">
+        <id column="create_section_id" property="id"/>
+        <result column="create_section_name" property="name"/>
+        <result column="create_section_content" property="content"/>
+        <result column="create_section_book_id" property="bookId"/>
+    </resultMap>
+
+    <!--*******************查询所有书籍*******************-->
+    <select id="selAllBook" resultMap="CreateBookMapper">
+        select * from create_book
+    </select>
+    <!--*******************按照书籍id查询所有章节*******************-->
+    <select id="selSectionByBookId" resultMap="CreateSectionMapper">
+        select * from create_section where create_section_book_id = #{id}
+    </select>
+    <!--*******************按照章节id查询章节*******************-->
+    <select id="selSectionById" resultMap="CreateSectionMapper">
+        select * from create_section where create_section_id = #{id}
+    </select>
+</mapper>

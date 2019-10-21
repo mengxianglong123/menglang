@@ -1,0 +1,43 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.menglangpoem.mobile.mapper.PoemCardImgMapper">
+    <resultMap id="PoemCardImgMapper" type="PoemCardImg">
+        <id column="poem_card_img_id" property="id"/>
+        <result column="poem_card_img_name" property="name"/>
+        <result column="poem_card_img_type" property="type"/>
+    </resultMap>
+
+    <resultMap id="PhraseBackMapper" type="PhraseBack">
+        <id column="phrase_back_id" property="id"/>
+        <result column="phrase_back_name" property="name"/>
+        <result column="phrase_back_color" property="color"/>
+    </resultMap>
+
+    <resultMap id="FindBackMapper" type="FindBack">
+        <id column="find_back_id" property="id"/>
+        <result column="find_back_color" property="color"/>
+        <result column="find_back_name" property="name"/>
+        <result column="find_back_content" property="content"/>
+        <result column="find_back_title" property="title"/>
+    </resultMap>
+    <!--***********************随机查询顶部图片***********************-->
+    <select id="selTopRand" resultMap="PoemCardImgMapper">
+        select * from poem_card_img  where poem_card_img_type='top' order by rand() limit 1
+    </select>
+
+    <!--***********************随机查询底部图片***********************-->
+    <select id="selBottomRand" resultMap="PoemCardImgMapper">
+        select * from poem_card_img  where poem_card_img_type='bottom' order by rand() limit 1
+    </select>
+
+    <!--***********************随机查询名句图片***********************-->
+    <select id="selPhraseBackRand" resultMap="PhraseBackMapper">
+        select * from phrase_back order by rand() limit 10
+    </select>
+
+    <!--***********************随机发现页面背景图片***********************-->
+    <select id="selFindBackRand" resultMap="FindBackMapper">
+        select * from find_back order by rand() limit 1
+    </select>
+</mapper>

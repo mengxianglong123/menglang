@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#2196f3">
+    <title>孟郎诗词网</title>
+    <link rel="stylesheet" href="../static/css/framework7.bundle.min.css">
+    <!--引入图标-->
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1387891_bflchudl1np.css">
+    <!--引入样式文件-->
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href="../static/css/base.css">
+    <link rel="stylesheet" href="../static/css/home.css">
+    <link rel="stylesheet" href="../static/css/authorList.css">
+    <link rel="stylesheet" href="../static/css/poemList.css">
+    <link rel="stylesheet" href="../static/css/phraseList.css">
+    <link rel="stylesheet" href="../static/css/authorDetail.css">
+    <link rel="stylesheet" href="../static/css/poemDetail.css">
+    <link rel="stylesheet" href="../static/css/find.css">
+    <link rel="stylesheet" href="../static/css/search.css">
+    <link rel="stylesheet" href="../static/css/searchResult.css">
+    <link rel="stylesheet" href="../static/css/me.css">
+    <link rel="stylesheet" href="../static/css/create.css">
+</head>
+<body>
+
+<div id="app">
+
+    <!-- Your main view, should have "view-main" class -->
+    <div class="view view-main view-init" data-url="/">
+        <!-- Initial Page, "data-name" contains page name -->
+        <div data-name="home" class="page">
+
+
+
+            <div class="toolbar tabbar toolbar-bottom">
+                <div class="toolbar-inner">
+                    <!-- **********底部工具栏********** -->
+                    <a href="/" class="tab-link" data-route-tab-id="home">
+                        <i class="iconfont iconhomefill"></i>
+                        <span class="tabbar-label">首页</span>
+                    </a>
+                    <a href="/create/" class="tab-link" data-route-tab-id="create">
+                        <i class="iconfont iconmaobi" style="font-weight: bold;font-size: 26px;"></i>
+                        <span class="tabbar-label">创作</span>
+                    </a>
+                    <a href="/find/" class="tab-link" data-route-tab-id="find">
+                        <i class="iconfont iconfaxian1"></i>
+                        <span class="tabbar-label">发现</span>
+                    </a>
+                    <a href="/me/" class="tab-link" data-route-tab-id="me">
+                        <i class="iconfont iconmyfill"></i>
+                        <span class="tabbar-label">我的</span>
+                    </a>
+                </div>
+            </div>
+
+
+            <!-- **********路由选项卡********** -->
+                <div class="tabs tabs-routable">
+                    <div class="tab page-content" id="home"></div>
+                    <div class="tab page-content" id="create"></div>
+                    <div class="tab page-content" id="find"></div>
+                    <div class="tab page-content" id="me"></div>
+                </div>
+        </div>
+    </div>
+</div>
+<!-- 引入文件 -->
+<script type="text/javascript" src="../static/js/framework7.bundle.js"></script>
+<script src="../static/js/routes.js"></script>
+<script src="../static/js/jquery-3.4.1.min.js"></script>
+
+<script>
+    // 初始化app
+    var app = new Framework7({
+        // App root element
+        root: '#app',
+        name: 'My App',
+        // App id
+        id: 'com.myapp.test',
+        theme:'ios'
+    });
+    var mainView = app.views.create('.view-main',{
+        // xhrCache:false,
+        stackPages:true,
+        iosDynamicNavbar:false,
+        routes:routes,
+        xhrCacheIgnore:['search-authorList','search-poemList'],
+        // xhrCacheIgnoreGetParameters:true
+        pushState:true,
+        // iosSeparateDynamicNavbar:false
+        // pushStateAnimateOnLoad:true
+        pushStateOnLoad:false
+    });
+
+    function upOpen() {
+        app.dialog.alert("","此功能暂时未开放");
+    }
+
+</script>
+
+<!--无限滚动列表公共js代码-->
+<script src="../static/js/infList.js"></script>
+<!--作者列表js代码-->
+<script src="../static/js/authorList.js"></script>
+<!--诗词列表js代码-->
+<script src="../static/js/poemList.js"></script>
+<!--名句列表js代码-->
+<script src="../static/js/phraseList.js"></script>
+<!--搜索js代码-->
+<script src="../static/js/search.js"></script>
+<!--发现页面js代码-->
+<script src="../static/js/find.js"></script>
+<!--创作页面js代码-->
+<script src="../static/js/create.js"></script>
+</body>
+</html>

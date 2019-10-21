@@ -1,0 +1,60 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.menglangpoem.mobile.mapper.PoemMapper">
+    <resultMap id="PoemMapper" type="Poem">
+        <id column="poem_id" property="id"/>
+        <result column="poem_title" property="title"/>
+        <result column="poem_author" property="author"/>
+        <result column="poem_time" property="time"/>
+        <result column="poem_content" property="content"/>
+        <result column="poem_comment" property="comment"/>
+        <result column="poem_tag" property="tag"/>
+        <result column="poem_excerpt" property="excerpt"/>
+    </resultMap>
+
+    <!--***********************分页查询所有诗词***********************-->
+    <select id="selAllPage" resultMap="PoemMapper">
+        select * from poems limit #{pageNum},20
+    </select>
+
+
+    <!--***********************按标签分页查询诗词***********************-->
+    <select id="selByTagPage" resultMap="PoemMapper">
+        select * from poems where poem_tag like concat('%',#{tagName},'%') limit #{pageNum},20
+    </select>
+
+    <!--***********************按诗人随机查询三首诗词***********************-->
+    <select id="selByAuthorSimple" resultMap="PoemMapper">
+        select * from poems where  poem_author = #{authorName} limit 0,3
+    </select>
+
+    <!--***********************按诗人分页查询诗词***********************-->
+    <select id="selByAuthorPage" resultMap="PoemMapper">
+        select * from poems where  poem_author = #{authorName} limit #{pageNum},20
+    </select>
+
+    <!--***********************按id查询诗词***********************-->
+    <select id="selById" resultMap="PoemMapper">
+        select * from poems where  poem_id = #{poemId}
+    </select>
+
+    <!--***********************按标题分页查询诗词***********************-->
+    <select id="selByTitlePage" resultMap="PoemMapper">
+        select * from poems where poem_title like concat('%',#{titleName},'%') limit #{pageNum},20
+    </select>
+
+    <!--***********************按诗句分页查询诗词***********************-->
+    <select id="selByContentPage" resultMap="PoemMapper">
+        select * from poems where poem_content like concat('%',#{content},'%') limit #{pageNum},20
+    </select>
+
+    <!--***********************综合查询诗词***********************-->
+    <select id="selOverAll" resultMap="PoemMapper">
+        select * from poems where
+        poem_title like concat('%',#{keyword},'%') or
+        poem_author like concat('%',#{keyword},'%') or
+        poem_content like concat('%',#{keyword},'%')
+        limit #{pageNum},20
+    </select>
+</mapper>

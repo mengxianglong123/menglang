@@ -1,0 +1,29 @@
+<div class="page page-about" xmlns:th="http://www.thymeleaf.org">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left">
+                <a href="#" class="link back">
+                    <i class="icon icon-back"></i>
+                    <span>返回</span>
+                </a>
+            </div>
+            <div class="title">版本信息</div>
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="timeline">
+            <div class="timeline-item" th:each="v : ${versions}">
+                <div class="timeline-item-date" th:text="${v.getTime()}"></small></div>
+                <div class="timeline-item-divider"></div>
+                <div class="timeline-item-content">
+                    <div class="timeline-item-inner">
+                        <div class="timeline-item-title" th:text="${v.getName()}"></div>
+                        <div class="timeline-item-subtitle" th:text="'版本号：'+${v.getNum()}"></div>
+                        <div class="timeline-item-text" th:text="${v.getContent()}"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

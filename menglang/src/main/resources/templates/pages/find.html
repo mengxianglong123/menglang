@@ -1,0 +1,29 @@
+<div class="page page-find" xmlns:th="http://www.thymeleaf.org">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left">
+                <a href="" class="link" onclick="upOpen()"><i class="iconfont iconfenxiang" style="font-size: 27px;"></i></a>
+            </div>
+            <div class="title">发现</div>
+            <div class="right"><a href="/search/" class="link"><i class="iconfont iconsousuo1"></i></a></div>
+
+        </div>
+    </div>
+    <div class="page-content infinite-scroll-content find-phrase">
+        <!--*********************顶部gif图*********************-->
+        <div class="find-gif" th:style="${findBack.getName()+'color:'+findBack.getColor()}">
+            <div class="find-gif-content" th:text="${findBack.getContent()}"></div>
+            <div class="find-gif-title" th:text="'《孟郎诗词---'+${findBack.getTitle()}+'》'"></div>
+            <div class="find-gif-head">
+                <img src="../static/images/nomal/head.png" alt="">
+            </div>
+        </div>
+
+        <!--*********************动态无限滚动*********************-->
+        <div class="find-phrase-list">
+            <ul>
+            </ul>
+        </div>
+        <div class="List-preloader find-phrase-preloader" style="margin-bottom: 30px"></div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+.mes{
+    width: 100%;
+    height: 200px;
+    background-image: linear-gradient( 135deg, #FEB692 10%, #BB4455 100%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.mes img{
+    width: 70px;
+    border-radius: 50%;
+    border: 5px solid rgba(255,255,255,.5);
+}
+.mes-name{
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+.mes-version{
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 35px;
+    border: 2px solid white;
+    padding-top:2px;
+    padding-bottom: 2px;
+    padding-left: 7px;
+    padding-right: 7px;
+}

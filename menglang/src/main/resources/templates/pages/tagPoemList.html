@@ -1,0 +1,25 @@
+<div class="page page-tagPoemList" xmlns:th="http://www.thymeleaf.org">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left">
+                <a href="#" class="link back">
+                    <i class="icon icon-back"></i>
+                    <span>返回</span>
+                </a>
+            </div>
+            <!--/*@thymesVar id="pageName" type="cn"*/-->
+            <div class="title" th:text="${pageName}"></div>
+            <a class="right iconfont iconsousuo1 link"></a>
+        </div>
+    </div>
+    <div class="page-content tagPoem-inf infinite-scroll-content">
+        <div class="list media-list tagPoem-list">
+            <ul>
+                <li>
+
+                </li>
+            </ul>
+        </div>
+        <div class="preloader infinite-scroll-preloader tagPoemList-preloader"></div>
+    </div>
+</div>

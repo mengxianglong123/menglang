@@ -1,0 +1,42 @@
+<div class="page page-tagList" xmlns:th="http://www.thymeleaf.org">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left">
+                <a href="#" class="link back">
+                    <i class="icon icon-back"></i>
+                    <span>返回</span>
+                </a>
+            </div>
+            <div class="title" style="margin: 0 auto"><img src="../static/images/nomal/logo.png" alt="" id="logo"></div>
+            <a class="right iconfont iconsousuo1 link" href="/search/"></a>
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="block block-strong hot-poems hots">
+            <div class="hot-poems-title hot-title all-tag"><i class="iconfont iconleimupinleifenleileibie"></i>全部分类</div>
+            <div class="hot-poem-row hot-row" th:each="i:${#numbers.sequence(0,row-2)}">
+
+                <div class="hot-poem hot" th:each="j:${#numbers.sequence(1,4)}"  th:with="t=${tags.get(j+i*4-1)}">
+                    <a class="hot-poem-img link hot-img"
+                       th:style="  'background-image:url(' + '../static/images/poemTags/'+${t.name}+'.jpg'    "
+                       th:href="'/poemList/?pageName='+${t.name}"
+                       th:onclick="openPoemList('selPoemByTagPage',[[${t.name}]],[[${t.name}]])"></a>
+                    <span class="hot-poem-name hot-name" th:text="${t.name}"></span>
+                </div>
+
+
+            </div>
+
+
+            <div class="hot-poem-row hot-row">
+
+                <div class="hot-poem hot" th:each="j:${#numbers.sequence((row-1)*4,len-1)}" th:with="t=${tags.get(j)}">
+                    <a class="hot-poem-img link hot-img"  th:style="  'background-image:url(' + '../static/images/poemTags/'+${t.name}+'.jpg'    " th:href="'/poemList/?pageName='+${t.name}" th:onclick="openPoemList('selPoemByTagPage',[[${t.name}]],[[${t.name}]])"></a>
+                    <span class="hot-poem-name hot-name" th:text="${t.name}"></span>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>

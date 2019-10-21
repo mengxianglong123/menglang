@@ -1,0 +1,27 @@
+<div class="page" xmlns:th="http://www.thymeleaf.org">
+    <!-- 头部导航栏 -->
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left">
+                <a href="#" class="link back">
+                    <i class="icon icon-back"></i>
+                    <span>返回</span>
+                </a>
+            </div>
+            <div class="title" style="margin: 0 auto">选择字体</div>
+            <a class="right link" onclick="toCreate()">
+                完成
+            </a>
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="create-fonts">
+
+            <div class="create-font" th:each="font : ${fonts}">
+                <img th:src="@{${path+#strings.replace(font.name,' ','')+after}}" th:alt="${font.id}">
+                <div th:text="${#strings.replace(font.name,' ','')}" class="font-name"></div>
+            </div>
+
+        </div>
+    </div>
+</div>

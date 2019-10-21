@@ -1,0 +1,38 @@
+<div class="page" xmlns:th="http://www.thymeleaf.org">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left">
+            </div>
+            <div class="title">创作中心</div>
+            <div class="right"></div>
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="create-top">
+            <a href="/selCreateImg/" class="button button-fill-ios link create-begin">
+                <i class="iconfont iconchuangzuo"></i>
+                开始创作
+            </a>
+        </div>
+
+        <div class="create-book-list-title"><i class="iconfont iconshu"></i> 诗词创作知识 <i class="iconfont iconshu"></i> </div>
+        <div class="list media-list create-book-list">
+
+            <ul>
+
+                <li th:each="book : ${books}">
+                    <a th:href="${'/sectionList/?id='+book.id+'&name='+book.name}" class="item-link item-content">
+                        <div class="item-media"><img th:src="@{${path+book.name+'.jpg'}}" width="80"/></div>
+                        <div class="item-inner">
+                            <div class="item-title-row">
+                                <div class="item-title" th:text="'《'+${book.name}+'》'"></div>
+                            </div>
+                            <div class="item-subtitle" th:text="${book.author}" style="margin-left: 9px;"></div>
+                            <div class="item-text" th:text="${book.intro}"></div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

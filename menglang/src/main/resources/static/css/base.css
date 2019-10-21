@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/*图标*/
+.iconfont{
+    font-size: 25px;
+    margin-bottom: 0;
+}
+.tabbar-label{
+    font-size: 10px;
+}
+
+/*主题颜色*/
+:root {
+    --f7-theme-color: #c04851;
+    --f7-theme-color-shade: #BB4455;
+    --f7-theme-color-tint: #DD4455;
+    --f7-theme-color-rgb: 192,72,81;
+}
+
+/*引入字体*/
+@font-face {
+    font-family: "kai";
+    src: url("../fonts/simkai.ttf");
+}
+/*指定字体*/
+/*body{*/
+    /*font-family: "kai";*/
+/*}*/
+/*************预加载样式************/
+.List-preloader {
+    display: flex;
+    width: 3em;
+    height: 3em;
+    border: 3px solid transparent;
+    border-top-color: #c04851;
+    border-bottom-color: #c04851;
+    border-radius: 50%;
+    animation: spin 1.5s linear infinite;
+    margin: 10px auto;
+}
+
+.List-preloader:before {
+    content: '';
+    display: block;
+    margin: auto;
+    width: 0.75em;
+    height: 0.75em;
+    border: 3px solid #c04851;
+    border-radius: 50%;
+    animation: pulse 1s alternate ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(0.5);
+    }
+    to {
+        transform: scale(1);
+    }
+}

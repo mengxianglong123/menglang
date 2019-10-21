@@ -1,0 +1,57 @@
+<div class="page page-authorDetail" xmlns:th="http://www.thymeleaf.org">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left">
+                <a href="#" class="link back">
+                    <i class="icon icon-back"></i>
+                    <span>返回</span>
+                </a>
+            </div>
+            <div class="title">诗人墨堂</div>
+            <a class="right iconfont iconsousuo1 link"></a>
+        </div>
+    </div>
+    <div class="page-content">
+        <!--***********************诗人卡片***********************-->
+        <div class="author-card">
+            <div class="author-card-img"><img th:src="${path+author.img}" alt="" width="80"></div>
+            <div class="author-text">
+                <span class="author-name" th:text="${author.name}"></span>
+                <span class="author-time" th:text="${author.time}"></span>
+                <span class="author-label" th:if="${labels[0] ne ''}">
+                    <div class="chip" th:each="label : ${labels}">
+                        <div class="chip-label"  th:text="${label}"></div>
+                    </div>
+                </span>
+
+            </div>
+            <img src="../static/images/nomal/logo.png" class="author-logo">
+            <img src="../static/images/nomal/二维码.jpg" class="author-public">
+        </div>
+
+        <!--***********************诗人简介***********************-->
+        <div class="author-intro">
+            <div class="author-intro-title"><i class="iconfont iconjianjie-"></i>简介</div>
+            <div class="author-intro-text" th:text="${author.introduction}">
+            </div>
+        </div>
+
+
+        <!--***********************诗人作品示例***********************-->
+        <div class="block-title simple-poems-title">
+            <img src="../static/images/nomal/yin.png" class="yin">
+            <span class=""  th:text="${author.name+'的诗词'}"></span>
+        </div>
+        <div class="author-simple-poems block block-strong">
+            <div class="author-simple-poem" th:each="p : ${poems}">
+                <div class="simple-poem-title" th:text="${p.title}"></div>
+                <div class="simple-poem-content" th:utext="${p.content}">
+                </div>
+            </div>
+
+            <a class="simple-more link" th:href="'/poemList/?pageName='+${author.name}+'诗词全集'" th:onclick="openPoemList('selPoemByAuthorPage',[[${author.name}]],[[${author.name}+'诗词全集']])">
+               查看[[${author.name}]]诗词全集<i class="iconfont iconright-fill"></i>
+            </a>
+        </div>
+    </div>
+</div>
